@@ -27,7 +27,6 @@ General features:
 
 - Automatically saving the users who start the bot to the starteds database
 - Changing settings using glass buttons
-- Inline searching for an artist's URL, as well as the command version
 - Getting help after you choose language after you start the bot
 - Changing the language to many languages, but easier to choose for: English, Farsi (Persian), Russian, Turkish
 - Double checking with user before resetting, also backing up and sending to the user
