@@ -43,7 +43,9 @@ my version: 3.11.2
 ### Installation
 
 1. Open terminal in the root directory and install requirement with this command:
-   `pip install -r requirements.txt`
+   ```
+   pip install -r requirements.txt
+   ```
 2. Make your bot:
    1. Go to [Bot Father](https://t.me/BotFather)
    2. Create a new bot and copy your token.
