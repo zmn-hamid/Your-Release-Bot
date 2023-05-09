@@ -69,10 +69,7 @@ def help_command(update: Update, context):
             dbh, tr = user_data_init(user_id=user_id)
 
             # send help text
-            text = tr.do(help_en)
-            with open('Temp/temp.txt', 'w', encoding='utf-8') as f:
-                f.write(text)
-            send_user(chat_id, text,
+            send_user(chat_id, tr.do(help_en),
                       pm=True, wpp=True, reply=message)
 
             # [OPTIONAL] send video tutorial
