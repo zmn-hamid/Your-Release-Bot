@@ -130,6 +130,8 @@ my version: 3.11.2
 
 Once you're in the root directory, run the app using `python bot.py`.
 
+<b>Important Note</b>: The admin must regularly send the releases using `/admin rls`. It doesn't happen automatically.
+
 ## License
 
 MIT License
