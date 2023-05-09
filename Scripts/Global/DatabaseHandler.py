@@ -304,7 +304,7 @@ class UserDataHandler(DatabaseHandler):
                     raise YRE.ArtistNotAdded(artist_id)
                 else:
                     self.user_artists.remove(artist_id)
-                    return artist_id, artist_name
+                    return artist
 
         return RemoveArtistsIterator(self.db, user_id, artist_ids, user_artists)
 

@@ -89,10 +89,8 @@ def help_command(update: Update, context):
                 )
 
                 if file_id:
-                    print('sending with fild id')
                     send_user(file_id, **default_kwargs)
                 else:
-                    print('sending with upload')
                     msg = send_user(open(get_video_tutorial(), 'rb'),
                                     **default_kwargs)
                     if not file_ids:

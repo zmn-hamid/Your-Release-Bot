@@ -24,7 +24,7 @@ def del_artists_handler(update: Update, context):
         try:
             # init
             dbh, tr = user_data_init(user_id=user_id, message=message)
-            artist_ids = message.text.split()
+            artist_ids = message.text.split()[1:]
 
             # getting the iterator
             del_artists_iter = dbh.del_artists(
@@ -56,7 +56,7 @@ def del_artists_handler(update: Update, context):
             try:
                 dbh.save_database()
                 return send_user(chat_id, bold(
-                    '-- %s --' % (tr.do('Added the correct ones successfully.'))),
+                    '-- %s --' % (tr.do('Deleted the correct ones successfully.'))),
                     pm=True, reply=message)
             except:
                 dbh.reset_database(backup_database=backup_user_database)

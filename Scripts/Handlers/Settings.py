@@ -127,30 +127,28 @@ def reset_callback(update: Update, context):
                     send_user(tr.do('you dont have any artists at all.'),
                               method=message.edit_text)
                 else:
-                    send_user(
-                        message, bold(tr.do('You sure?')),
-                        reply_markup=InlineKeyboardMarkup([
-                            [InlineKeyboardButton(
-                                tr.do("Yeah I'm sure"),
-                                callback_data='settings|reset|first-approval')],
-                            [InlineKeyboardButton(
-                                tr.do("No, Don't reset"),
-                                callback_data='settings|reset|cancel')],
-                        ]), pm=True, method=message.edit_text)
+                    send_user(bold(tr.do('You sure?')),
+                              reply_markup=InlineKeyboardMarkup([
+                                  [InlineKeyboardButton(
+                                      tr.do("Yeah I'm sure"),
+                                      callback_data='settings|reset|first-approval')],
+                                  [InlineKeyboardButton(
+                                      tr.do("No, Don't reset"),
+                                      callback_data='settings|reset|cancel')],
+                              ]), pm=True, method=message.edit_text)
 
             else:
                 match data[1]:
                     case 'first-approval':
-                        send_user(
-                            message, bold(tr.do('%100 sure?')),
-                            reply_markup=InlineKeyboardMarkup([
-                                [InlineKeyboardButton(
-                                    tr.do("Yes."),
-                                    callback_data='settings|reset|second-approval')],
-                                [InlineKeyboardButton(
-                                    tr.do("No No..."),
-                                    callback_data='settings|reset|cancel')],
-                            ]), pm=True, method=message.edit_text)
+                        send_user(bold(tr.do('%100 sure?')),
+                                  reply_markup=InlineKeyboardMarkup([
+                                      [InlineKeyboardButton(
+                                          tr.do("Yes."),
+                                          callback_data='settings|reset|second-approval')],
+                                      [InlineKeyboardButton(
+                                          tr.do("No No..."),
+                                          callback_data='settings|reset|cancel')],
+                                  ]), pm=True, method=message.edit_text)
 
                     case 'second-approval':
                         # no more needed / preventing from resending
@@ -180,7 +178,7 @@ def reset_callback(update: Update, context):
                                   reply=message.reply_to_message, pm=True)
 
                     case 'cancel':
-                        send_user(message, tr.do("Didn't reset anything."),
+                        send_user(tr.do("Didn't reset anything."),
                                   method=message.edit_text)
         except:
             send_error(message=message)
@@ -217,8 +215,8 @@ def your_artists_callback(update: Update, context):
                                       wpp=True, reply=message.reply_to_message)
                             text = ''
                 else:
-                    send_user(chat_id, bold(tr.do(f'You have no artist yet.')),
-                              method=message.edit_text, pm=True)
+                    send_user(chat_id, bold(
+                        tr.do(f'You have no artist yet.')), pm=True)
         except:
             send_error(message=message)
 
