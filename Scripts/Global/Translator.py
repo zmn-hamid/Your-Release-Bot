@@ -8,7 +8,7 @@ from deep_translator.constants import GOOGLE_LANGUAGES_TO_CODES as LANGS
 from Scripts.Global.YR_Exceptions import YRE
 
 
-class Translator:
+class BaseTranslator:
     '''
         ## Google Translator
         - translate any language to the desired language
@@ -25,6 +25,7 @@ class Translator:
         '''
             ## validates the language is correct
             - raises `YRE.LanguageNotDetected`
+            - returns language if no fail
         '''
         if language not in list(LANGS.keys()) + list(LANGS.values()):
             raise YRE.WrongLanguage('language not detected')
@@ -49,3 +50,28 @@ class Translator:
             return text
         return GoogleTranslator(source=self.base_language,
                                 target=self.language).translate(text)
+
+
+class Translator(BaseTranslator):
+    '''
+        ## does nothing
+        the previous translator faced a lot of problems when translating html codings.
+        So i removed this function completely. But to make it take less time,
+        and also to keep the original translator code, I inherited it and turned off everything
+    '''
+
+    def __init__(self, base_language: str = 'en') -> None:
+        pass
+
+    @staticmethod
+    def validate_language(language: str):
+        return 'en'
+
+    def get_language(self):
+        return 'en'
+
+    def set_language(self, language: str):
+        pass
+
+    def do(self, text: str) -> str:
+        return text

@@ -156,7 +156,7 @@ class UserDataHandler(DatabaseHandler):
             - raises `YRE.DatabaseNotFetched`
         '''
         self._validate_db()
-        return user_id in self.db['users'].keys()
+        return str(user_id) in self.db['users'].keys()
 
     def create_user(self,
                     user_id: str | int,

@@ -49,8 +49,9 @@ def settings(update: Update, context):
                     InlineKeyboardButton(
                         tr.do('Your Plan'), callback_data='settings|your-plan|'),
                     # used in /language but publicly accessed here
-                    InlineKeyboardButton(
-                        tr.do('Language'), callback_data='language|%s' % tr.get_language()),
+                    # OPTION REMOVED
+                    # InlineKeyboardButton(
+                    #     tr.do('Language'), callback_data='language|%s' % tr.get_language()),
                 ],
             ]), pm=True, reply=message)
         except:
@@ -123,7 +124,7 @@ def reset_callback(update: Update, context):
 
             if len(data) == 1:
                 if not len(dbh.user_data(user_id=user_id)['artists']):
-                    send_user(message, tr.do('you dont have any artists at all.'),
+                    send_user(tr.do('you dont have any artists at all.'),
                               method=message.edit_text)
                 else:
                     send_user(

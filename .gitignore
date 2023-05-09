@@ -5,6 +5,7 @@ __pycache__/
 
 /Temp/
 /.temp-*.json
+/temp.py
 
 /Tests/Temp/*
 !/Tests/Temp/README.md

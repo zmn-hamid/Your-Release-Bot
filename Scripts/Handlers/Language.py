@@ -1,4 +1,8 @@
-'''# Language handler'''
+'''
+    ## Language handler
+
+    # THIS FUNCTION IS REMOVED. NOT WORKING
+'''
 
 import re
 from telegram import *
@@ -114,5 +118,5 @@ language_handlers = [
     CommandHandler('language', language),
     CallbackQueryHandler(language_callback, pattern='^' +
                          re.escape('language|')),
-    CommandHandler('other_languages', other_languages),
+    CommandHandler('language_other', other_languages),
 ]

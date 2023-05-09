@@ -25,14 +25,14 @@ from Scripts.Handlers.StartHelp import start_help_handlers
 
 # adding the handlers
 for handler in [
+    *del_artists_handlers,
     *start_help_handlers,
     *admin_handlers,
     *donation_handlers,
     *inline_handlers,
     *search_handlers,
-    *language_handlers,
+    # *language_handlers,  ## OPTION REMOVED
     *settings_handlers,
-    *del_artists_handlers,
     *add_artists_handlers,  # Filters.text is here
 ]:
     dispatcher.add_handler(handler)

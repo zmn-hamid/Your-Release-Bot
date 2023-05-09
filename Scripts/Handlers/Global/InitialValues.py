@@ -16,11 +16,10 @@ def user_data_init(user_id: str, message: Message = None):
     '''
     dbh = UserDataHandler()
     if message and not dbh.user_exists(user_id=user_id):
-        language_code = message.from_user.language_code
-
-        # handle no/wrong language code
+        # handle no/wrong user language code
         try:
-            Translator.validate_language(language=language_code)
+            language_code = Translator.validate_language(
+                language=message.from_user.language_code)
         except:
             language_code = 'en'
 

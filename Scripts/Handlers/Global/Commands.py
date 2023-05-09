@@ -4,7 +4,7 @@ commands = [
     ('help', 'get help'),
     ('del', 'delete artist'),
     ('search', 'search for artist'),
-    ('language', 'change language'),
+    # ('language', 'change language'),  # removed
     ('settings', 'manage user settings'),
 ]
 
