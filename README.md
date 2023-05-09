@@ -53,7 +53,8 @@ my version: 3.11.2
 3. Go to your [Spotify Developer Dashboard](https://developer.spotify.com/dashboard), make a new app and in the settings, copy your Client ID and Client Secret.
 4. We need the ID of admin. If you're the admin, you can send a message to [What's My Telegram ID](https://github.com/MasterGroosha/my-id-bot) to get your ID, then copy it. If you aren't the admin, send a message from admin to this bot.
    <b>Note</b>: Admin must have a username. Copy their username as well.
-5. In the [Data](Data/) folder, put three files:
+5. Clone the project
+6. In the [Data](Data/) folder, put three files:
    - `database_file.json`:
    ```
    {
@@ -70,7 +71,7 @@ my version: 3.11.2
    {}
    ```
    You can put these three files anywhere under the main directory, but you have to address them correctly.
-6. Make a `config.py` file in the root directory, and put this text inside it:
+7. Make a `config.py` file in the root directory, and put this text inside it:
 
    ```
    BOT_TOKEN = 'Your Bot Token'
