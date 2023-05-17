@@ -45,8 +45,6 @@ def admin(update: Update, context, **kwargs):
                     sample_text % ('rls',
                                    'send new releases'),
                     '\n',
-                    sample_text % ('vip',
-                                   'get help about vip'),
                     sample_text % ('vip get USER_ID',
                                    'get one user\'s plan'),
                     sample_text % ('vip set USER_ID PLAN_NAME',

@@ -130,7 +130,17 @@ my version: 3.11.2
 
 Once you're in the root directory, run the app using `python bot.py`.
 
-<b>Important Note</b>: The admin must regularly send the releases using `/admin rls`. It doesn't happen automatically.
+### Admin Usage [IMPORTANT]
+
+Admins can send the `/admin` command to get a help text for them.
+
+- `/admin starteds text` : Sends the people who started the bot, as text
+- `/admin starteds json` : Sends the people who started the bot, as a json file
+- `/admin rls` : <b>IMPORTANT</b> Admin should regularly send this command to get the latest releases. The bot doesn't automatically do that.
+- `/admin vip get USER_ID` : Get the current plan of the given user. You have to replace USER_ID with user's numeric ID.
+- `/admin vip set USER_ID PLAN_NAME` : Sets a plan for a user. You have to replace PLAN_NAME with the one you provided in `config.py`
+- `/admin usersdata USER_ID` : Sends a json file containing all the data of a user
+- `/admin datafile` : Sends the whole database file (`DATA_FILE_PATH`)
 
 ## License
 
