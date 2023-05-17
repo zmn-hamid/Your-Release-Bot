@@ -69,7 +69,7 @@ def admin(update: Update, context, **kwargs):
                     case 'starteds':
                         match textsplit[1]:
                             case 'json':
-                                send_user(open('user_data/YR_starteds.json', 'rb'),
+                                send_user(open(CONFIG.STARTEDS_FILE_APTH, 'rb'),
                                           reply=message, method=message.reply_document,
                                           caption=bold(get_current_date()), pm=True)
 
@@ -118,7 +118,7 @@ def admin(update: Update, context, **kwargs):
                                   pm=True, reply=message)
 
                     case 'datafile':
-                        send_user(open('user_data/YR_data.json', 'rb'),
+                        send_user(open(CONFIG.DATA_FILE_PATH, 'rb'),
                                   method=message.reply_document,
                                   caption=bold(
                                       'datafile - '+get_current_date()),
